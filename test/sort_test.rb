@@ -4,9 +4,7 @@ require_relative '../quick_sort'
 require_relative '../merge_sort'
 
 def testdata(n)
-  data = []
-  n.times { data << rand(1..100) }
-  data
+  (1..n).map {rand(1..100)}.reduce {|a, b| a.is_a?(Array) ? [*a, b] : [a, b]}
 end
 
 class SortTest < Minitest::Test
