@@ -7,11 +7,7 @@ def quick_sort(arr)
   lt, gt = [], []
   arr.each_with_index do |n, i|
     next if i == pivotIdx
-    if n < pivot
-      lt.push(n)
-    else
-      gt.push(n)
-    end
+    n < pivot ? lt << n : gt << n
   end
   quick_sort(lt) + [pivot] + quick_sort(gt)
 end
